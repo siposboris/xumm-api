@@ -20,8 +20,23 @@ const I18nFilter = require('@web/nunjucks_extensions/i18n')
 module.exports = async function (expressApp) {
   expressApp.use(bodyParser.urlencoded({ extended: true }))
   expressApp.use(locale({
-    priority: [ 'accept-language', 'default' ],
-    default: 'en_GB'
+    priority: [ 'custom', 'accept-language', 'default' ],
+    lookups: {
+      custom (req) {
+        const codes = (req.headers['accept-language'] || '').split(',').map(c => c.split(';')[0])
+        for (code in codes) {
+          if (codes[code].length !== 2) {
+            break
+          } else {
+            if (Object.keys(translations.raw).indexOf(codes[code]) > -1) {
+              return codes[code].toLowerCase() + '-' + codes[code].toUpperCase()
+            }
+          }
+        }
+        return undefined
+      }
+    },
+    default: 'en-GB'
   }))
   
   /**
@@ -58,6 +73,7 @@ module.exports = async function (expressApp) {
     if (req.url.match(/\.(css|png|jpg|gif|js|ico|svg)$/)) {
       res.setHeader('Cache-Control', 'max-age=2592000, public')
     }
+    console.log(req.locale)
     Object.assign(res.locals, {
       locale: req.locale,
       baselocation: req.config.baselocation,
