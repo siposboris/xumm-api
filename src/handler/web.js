@@ -73,7 +73,6 @@ module.exports = async function (expressApp) {
     if (req.url.match(/\.(css|png|jpg|gif|js|ico|svg)$/)) {
       res.setHeader('Cache-Control', 'max-age=2592000, public')
     }
-    console.log(req.locale)
     Object.assign(res.locals, {
       locale: req.locale,
       baselocation: req.config.baselocation,
