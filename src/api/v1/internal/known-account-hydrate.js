@@ -21,25 +21,30 @@ module.exports = (db, account, config) => {
       data.source = data.source.split(':').reverse()[0]
     }
 
-    return db(`
-      INSERT INTO knownaccounts (
-        knownaccount_account,
-        knownaccount_name,
-        knownaccount_domain,
-        knownaccount_source
-      )
-      VALUES (
-        :account,
-        :name,
-        :domain,
-        :source
-      )
-      ON DUPLICATE KEY UPDATE
-        knownaccount_name = IF(:name = '' OR :name IS NULL, knownaccount_name, :name),
-        knownaccount_source = IF(:source = '' OR :source IS NULL, knownaccount_source, :source),
-        knownaccount_domain = IF(:domain = '' OR :domain IS NULL, knownaccount_domain, :domain),
-        knownaccount_updated = CURRENT_TIMESTAMP
-  `, data)
+    if (data.source === '' && data.name === null && data.domain === null) {
+      // No results, nothing to persist
+      return false
+    } else {
+      return db(`
+        INSERT INTO knownaccounts (
+          knownaccount_account,
+          knownaccount_name,
+          knownaccount_domain,
+          knownaccount_source
+        )
+        VALUES (
+          :account,
+          :name,
+          :domain,
+          :source
+        )
+        ON DUPLICATE KEY UPDATE
+          knownaccount_name = IF(:name = '' OR :name IS NULL, knownaccount_name, :name),
+          knownaccount_source = IF(:source = '' OR :source IS NULL, knownaccount_source, :source),
+          knownaccount_domain = IF(:domain = '' OR :domain IS NULL, knownaccount_domain, :domain),
+          knownaccount_updated = CURRENT_TIMESTAMP
+      `, data)
+    }
   }
 
   const lookupBithomp = () => {
