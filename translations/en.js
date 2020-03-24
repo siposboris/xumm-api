@@ -30,7 +30,7 @@ module.exports = {
                           with the XUMM app.`,
   WAIT_FOR_RESOLVE: `Waiting for you to resolve (accept / deny) the 
                       <code class="text-primary"><b class="text-primary"><q>__txtype__</q></b></code>
-                      request in XUMM app.`,
+                      request in XUMM app. After signing and successful submission this message will be updated.`,
   SHOW_TRANSACTION: `Show sign request`,
   RESOLVED: `The sign request has been signed succesfully.`,
   RESOLVED_NEXT_RETURN: `You will return to <q><b>__appname__</b></q> in a few seconds`,
