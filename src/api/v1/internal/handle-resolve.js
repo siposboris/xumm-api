@@ -10,6 +10,13 @@ const cacheSeconds = 60 * 15 // 15 minutes
  * Todo: add XUMM hashed address book function lookup
  */
 
+const defaultFetchConfig = {
+  timeout: 3000,
+  size: 1024 * 100,
+  redirect: 'follow',
+  follow: 3
+}
+
 const is = {
   validEmailAccount (query) {
     const tester = /^[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~](\.?[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~])*@[a-zA-Z0-9](-*\.?[a-zA-Z0-9])*\.[a-zA-Z](-?[a-zA-Z0-9])+$/;
@@ -54,7 +61,7 @@ const xrplns = {
         'XRPLNS-KEY': app.config.xrplnsKey || ''
       },
       method: 'get',
-      timeout: 3000
+      ...defaultFetchConfig
     })
     const json = await callApi.json()
     return json
@@ -128,7 +135,7 @@ const bithomp = {
       const method = is.possibleXrplAccount(query) && query.length >= 20 ? 'address' : 'username'
       const call = await fetch('https://bithomp.com/api/v2/' + method + '/' + utf8.encode(query) + '?service=true&username=true&verifiedDomain=true&blacklisted=true', {
         method: 'get',
-        timeout: 2500,
+        ...defaultFetchConfig,
         headers: {
           'x-bithomp-token': app.config.bithompToken
         }
@@ -158,7 +165,7 @@ const xrpscan = {
       try {
         const call = await fetch('https://api.xrpscan.com/api/v1/account/' + utf8.encode(query), {
           method: 'get',
-          timeout: 2000
+          ...defaultFetchConfig
         })
         const response = await call.json()
         if (typeof response === 'object' && response !== null && typeof response.account === 'string' && typeof response.accountName === 'object' && response.accountName !== null) {
@@ -186,7 +193,7 @@ const xrpl = {
       try {
         const call = await fetch('https://s1.ripple.com:51234', {
           method: 'post',
-          timeout: 2000,
+          ...defaultFetchConfig,
           body: JSON.stringify({
             method: 'account_info',
             params: [ { account: query } ]
