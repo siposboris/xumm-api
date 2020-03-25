@@ -305,7 +305,11 @@ const app = {
         }
         return stack
       }, [])
-      await Promise.all(reducedApps)
+      try {
+        await Promise.all(reducedApps)
+      } catch (e) {
+        log(e.message)
+      }
       this.initialized = true
       return this.initialized
     }
