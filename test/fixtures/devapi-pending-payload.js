@@ -47,6 +47,7 @@ module.exports = expect.objectContaining({
     "account": "",
     "dispatched_result": "",
     "dispatched_to": "",
+    "dispatched_nodetype": expect.any(String),
     "hex": "",
     "multisign_account": "",
     "resolved_at": expect.any(String),

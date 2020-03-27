@@ -44,6 +44,7 @@ module.exports = async (uuid, expressApp, invoker) => {
         payloads.payload_resolved as response_resolved_at,
         payloads.payload_dispatched_to as response_dispatched_to,
         payloads.payload_dispatched_result as response_dispatched_result,
+        payloads.payload_dispatched_nodetype as response_dispatched_nodetype,
         payloads.payload_response_multisign_account as response_multisign_account,
         payloads.payload_response_account as response_account,
         tokens.token_accesstoken_txt as application_issued_user_token,
