@@ -108,6 +108,12 @@
         {% endif %}
 
       </div>
+      {% if results.__formatted.meta.return_url_web %}
+        <div class="text-right">
+          <small><a href="{{ results.__formatted.meta.return_url_web }}" class="d-block mt-3 text-muted mr-1 mb-2">{{ 'EXPIRED_BACK_BTN'|i18n({ appname: results.application_name }) }} <i class="fas fa-arrow-right"></i></a>               </small>
+        </div>
+      {% endif %}
+
     </div>
   </div>
 
