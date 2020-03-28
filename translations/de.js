@@ -2,7 +2,7 @@ module.exports = {
   LANGUAGE_CODE: 'de',
   ERROR: `Fehler`,
   ERROR_404_BODY: `Entschuldigung, die angeforderte Seite wurde nicht gefunden.`,
-  ERROR_500_BODY: `Entschuldigung, die Anfrage kann im Moment nicht bearbeitet werden.`,
+  ERROR_500_BODY: `Entschuldigung, die Anfrage konnte gerade nicht bearbeitet werden.`,
   LIPSUM: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin maximus sem ante, sit amet semper mauris venenatis non. Fusce posuere, libero ut volutpat ornare, massa ipsum hendrerit ipsum, sed finibus ipsum augue a nisl. Etiam at tempus ante, sit amet tristique leo. Vestibulum lobortis nisl a volutpat rhoncus. Ut facilisis ante a iaculis sollicitudin. Ut consectetur magna at libero vulputate, id pulvinar dui rutrum. Etiam facilisis finibus tincidunt.`,
   BY_NAME: `XPRL Labs`,
   XRPL_SIGNPLATFORM: `XRPL Signing Platform (BETA)`,
