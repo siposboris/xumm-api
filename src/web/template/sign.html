@@ -63,7 +63,12 @@
         {% set body %}
           {{ 'PAYLOAD_EXPIRED'|i18n }}
         {% endset %}
-        {{ _error.render(title, body) }}
+        {{ _error.render(title, body, undefined, {
+          button: {
+            text: 'EXPIRED_BACK_BTN'|i18n({ appname: results.application_name }),
+            url: results.__formatted.meta.return_url_web
+          }
+        }) }}
       {% elseif results._resolved > 0 %}
         {% set title %}
           <i class="far fa-hand-paper"></i> {{ 'ALREADY_SIGNED'|i18n }}
