@@ -26,7 +26,7 @@ module.exports = {
                   Anfrage mit der XUMM App.`,
   WAIT_SCAN_QR_DETAILED: `Warte auf Scannen der 
                             <code class="text-primary"><b class="text-primary">__txtype__</b></code>
-                          um 
+                          zu 
                             <code class="text-primary"><b>__txdestination__</b></code>
                           mit der XUMM App.`,
   WAIT_FOR_RESOLVE: `Warte auf Bearbeitung (bestätigen / ablehnen) der 
@@ -58,6 +58,6 @@ module.exports = {
   PAYLOAD_ALREADY_OPENED: `Bestätigungsanfrage wurde geöffnet`,
   NEED_QR_PAYLOAD_QR: `Du kannst die Bestätigungsanfrage erneut öffnen. Die Anfrage läuft ab <span class="ts-moment">__in_x_time_expire__</span>.`,
   PUSH_MSG_SIGN_REQUEST: `Bestätigungsanfrage`,
-  PUSH_MSG_TXTYPE_TO_DEST: `__type__ to __destination__`,
+  PUSH_MSG_TXTYPE_TO_DEST: `__type__ zu __destination__`,
   PUSH_MSG_SIGNIN_REQ: `Einloggen in __appname__`
 }
