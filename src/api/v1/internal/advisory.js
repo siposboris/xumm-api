@@ -20,7 +20,7 @@ const updateAdvisory = async () => {
   advisoryData.updating = true
 
   try {
-    const data = await fetch('https://xrpforensics.org/api/advisory/advisory.json')
+    const data = await fetch('https://api.xrplorer.com/v1/advisorylist')
     const json = await data.json()
 
     if (Object.keys(json).length < 100) {
