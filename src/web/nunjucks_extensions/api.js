@@ -3,6 +3,7 @@ const apis = {
   payloadData: require('@api/v1/internal/payload-data'),
   userProfile: require('@api/v1/internal/user-profile-page-lookup')
 }
+const payloadDataFormatter = require('@api/v1/internal/payload-data-formatter')
 
 class apiExtension {
   constructor (expressApp, invoker) {
@@ -40,7 +41,13 @@ class apiExtension {
             if (typeof args === 'object' && args !== null) param = args.uuid || ''
             if (typeof args === 'string') param = args
           }
+
           context.ctx.results = await apis[method](param || args, expressApp, invoker) // Assign before rendering body()
+
+          if (method === 'payloadData') {
+            context.ctx.results.__formatted = payloadDataFormatter(context.ctx.results, { meta: {} })
+          }
+
           response = new nunjucks.runtime.SafeString(body())
         } catch (e) {
           // Handle soft error
