@@ -8,7 +8,7 @@ module.exports = {
   XRPL_SIGNPLATFORM: `XRPL Signing Platform (BETA)`,
   TITLE_SIGNTX: `Bestätigungsanfrage`,
   ALREADY_SIGNED: `Bereits beantwortet`,
-  PAYLOAD_RESOLVED: `Diese Anfrage wurde bereits bearbeitet (bestätigt oder abgelehnt).`,
+  PAYLOAD_RESOLVED: `Diese Anfrage wurde bereits beantwortet (bestätigt oder abgelehnt).`,
   SCAN_WITH_APP: `Scanne diesen QR-Code mit <b class="font-logo">xumm</b>`,
   PAYLOAD_NOT_FOUND: `Bestätigungsanfrage wurde nicht gefunden.`,
   PAYLOAD_EXPIRED: `Bestätigungsanfrage abgelaufen.`,
@@ -17,27 +17,27 @@ module.exports = {
   PROFILE_BACKEND_ERROR: `Entschuldigung, es gab einen Fehler beim Laden der Daten des Benutzerprofils.`,
   PAYLOAD_PAGE_FOR_MOBILE: `Stelle sicher, dass die <b class="font-logo">xumm</b> App installiert ist, um eine Anfrage zu bestätigen.`,
   APPLICATION_DISABLED: `Die Applikation <q><b>__appname__</b></q> ist deaktiviert.`,
-  WAIT_CONNECT_PLATFORM: `Verbinde zur Bestätigungsplattform.`,
-  WAIT_OPEN: `Warte auf Öffnen der 
+  WAIT_CONNECT_PLATFORM: `Verbindet zur Bestätigungsplattform.`,
+  WAIT_OPEN: `Wartet auf Öffnen der 
                   <code class="text-primary"><b class="text-primary"><q>__txtype__</q></b></code>
                   Anfrage mit der XUMM App.`,
-  WAIT_SCAN_QR: `Warte auf Scannen der 
+  WAIT_SCAN_QR: `Wartet auf Scannen der 
                   <code class="text-primary"><b class="text-primary"><q>__txtype__</q></b></code>
                   Anfrage mit der XUMM App.`,
-  WAIT_SCAN_QR_DETAILED: `Warte auf Scannen der 
+  WAIT_SCAN_QR_DETAILED: `Wartet auf Scannen der 
                             <code class="text-primary"><b class="text-primary">__txtype__</b></code>
                           zu 
                             <code class="text-primary"><b>__txdestination__</b></code>
                           mit der XUMM App.`,
-  WAIT_FOR_RESOLVE: `Warte auf Bearbeitung (bestätigen / ablehnen) der 
+  WAIT_FOR_RESOLVE: `Wartet auf Bearbeitung (bestätigen / ablehnen) der 
                       <code class="text-primary"><b class="text-primary"><q>__txtype__</q></b></code>
                       Anfrage in der XUMM App. Nach der Bearbeitung und erfolgreicher Eingabe wird diese Nachricht aktualisiert.`,
   SHOW_TRANSACTION: `Zeige Bestätigungsanfrage`,
   RESOLVED: `Die Anfrage wurde erfolgreich bestätigt.`,
-  RESOLVED_NEXT_RETURN: `Zurück zu <q><b>__appname__</b></q> in wenigen Sekunden`,
+  RESOLVED_NEXT_RETURN: `Rückkehr zu <q><b>__appname__</b></q> in wenigen Sekunden`,
   REJECTED: `Die Anfrage wurde abgelehnt.`,
-  REJECTED_NEXT_RETURN: `Zurück zu <q><b>__appname__</b></q> in wenigen Sekunden`,
-  EXPIRED_NEXT_RETURN: `Zurück zu <q><b>__appname__</b></q> in wenigen Sekunden`,
+  REJECTED_NEXT_RETURN: `Rückkehr zu <q><b>__appname__</b></q> in wenigen Sekunden`,
+  EXPIRED_NEXT_RETURN: `Rückkehr zu <q><b>__appname__</b></q> in wenigen Sekunden`,
   GET_APP_IOS_TITLE: `Lade 𝘅𝘂𝗺𝗺 für iOS im Apple App Store`,
   GET_APP_ANDROID_TITLE: `Lade 𝘅𝘂𝗺𝗺 für Android im Google Play Store`,
   MODAL_CLOSE: `Schließen`,
