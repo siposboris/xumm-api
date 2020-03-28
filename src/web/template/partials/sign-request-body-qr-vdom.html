@@ -80,6 +80,18 @@
     </div>
 
     <div class="row" v-if="!resolved">
+      <div class="col-12">
+        {% if results.__formatted.meta.custom_instruction %}
+          <div class="text-center mb-3">
+            <div class="shadow-sm bg-light card">
+              <div class="card-body py-2">
+                {{ results.__formatted.meta.custom_instruction }}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+      
       <div v-if="!options.onlyMonitorSigning" class="col-12 col-sm-4">
         <svg class="mb-2" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
           {% qr %}
